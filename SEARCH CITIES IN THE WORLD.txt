@@ -1,0 +1,52 @@
+SEARCH CITIES IN THE WORLD
+
+Card Content
+Pict icon/banner emoji
+- Nama Negara (singkatan nama negara (iso2))
+- Phone_Code
+- Capital
+- Currency_name (Currency) (currency_symbol)
+- Native
+- Region
+- Subregion
+- Nationality
+- Map [latitude, longtitude] (https://www.google.com/maps/@latitude,longtitude,jarak/data=!3m1!1e3?entry=ttu) 2000000m untuk negara, 200000m untuk provinsi, 20000 untuk kota
+
+Modal Content?
+- Timezone (
+	gmtOffsetName zoneName tzName (abbreviation)
+)
+
+States
+- Nama State (state_code)
+- Type
+- Map [latitude, longtitude] (https://www.google.com/maps/@latitude,longtitude,jarak/data=!3m1!1e3?entry=ttu) 2000000m untuk negara, 200000m untuk provinsi, 20000 untuk kota
+
+Cities
+- Nama Kota
+- Map [latitude, longtitude] (https://www.google.com/maps/@latitude,longtitude,jarak/data=!3m1!1e3?entry=ttu) 2000000m untuk negara, 200000m untuk provinsi, 20000 untuk kota
+- Source Google Search nama kota
+
+'nama_kota' : kota['name'],
+'latKota' : kota['latitude'],
+'longKota' : kota['longitude'],
+'nama_wilayah' : wilayah['name'],
+'kode_wilayah' : wilayah['state_code'],
+'tipe_wilayah' : wilayah['type'],
+'latWilayah' : wilayah['latitude'],
+'longWilayah' : wilayah['longitude'],
+'nama_negara' : data['name'],
+'bendera' : data['emoji'],
+'singkatan_negara' : data['iso2'],
+'noTelp' : data['phone_code'],
+'ibukota' : data['capital'],
+'nama_mata_uang' : data['currency_name'],
+'mata_uang' : data['currency'],
+'simbol_mata_uang' : data['currency_symbol'],
+'bahasa' : data['native'],
+'benua' : data['region'],
+'sub_benua' : data['subregion'],
+'kebangsaan' : data['nationality'],
+'latNegara' : data['latitude'],
+'longNegara' : data['longitude'],
+'zona_waktu' : data['timezones'],
