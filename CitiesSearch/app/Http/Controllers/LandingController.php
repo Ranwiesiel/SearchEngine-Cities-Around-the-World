@@ -15,9 +15,7 @@ class LandingController extends Controller
         $query = $request->input('q');
         $rank = $request->input('rank');
         $filter = $request->input('filter');
-        $filter = explode(",", $filter);
-
-        $process = new Process(array_merge(['python', 'query.py', 'citiesDB', $rank, $query], $filter));
+        $process = new Process(['python', 'query.py', 'citiesDB', $rank, $query, $filter]);
         $process->setEnv(['PATH' => getenv('PATH')]);
         $process->run();
 

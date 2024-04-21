@@ -8,7 +8,7 @@ if len(sys.argv) != 5 :
 	print ("\n\nPenggunaan\n\tquery.py [index] [n] [query]..\n")
 	sys.exit(1)
 
-filter = sys.argv[4].split(",")
+filter = sys.argv[4]
 query = sys.argv[3].lower().split(" ")
 n = int(sys.argv[2])
 
