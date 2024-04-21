@@ -17,7 +17,8 @@ class LandingController extends Controller
         $filter = $request->input('filter');
         $filter = explode(",", $filter);
 
-        $process = new Process(array_merge(['C:\Users\ASUS\OneDrive\Documents\citiesSearch\.venv\Scripts\python.exe', 'query.py', 'citiesDB', $rank, $query], $filter));
+        $process = new Process(array_merge(['python', 'query.py', 'citiesDB', $rank, $query], $filter));
+        $process->setEnv(['PATH' => getenv('PATH')]);
         $process->run();
 
         // executes after the command finishes
@@ -47,15 +48,15 @@ class LandingController extends Controller
                         </p>
                     </div>
                     <div class="card-footer text-body-secondary">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWilayah">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWilayah'.$dataj['kode_wilayah'].'">
                             Detail Wilayah
                         </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNegara">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNegara'.$dataj['nama_negara'].'">
                             Detail Negara
                         </button>
                         
                         <!-- Modal Negara -->
-                        <div class="modal fade" id="modalNegara" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalNegara'.$dataj['nama_negara'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -84,7 +85,7 @@ class LandingController extends Controller
                         </div>
                         
                         <!-- Modal Wilayah -->
-                        <div class="modal fade" id="modalWilayah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalWilayah'.$dataj['kode_wilayah'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
