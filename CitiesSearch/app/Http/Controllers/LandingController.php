@@ -41,21 +41,19 @@ class LandingController extends Controller
                     <img style="width: 100px; height: 100px;" src="https://flagsapi.com/'.$dataj['singkatan_negara'].'/flat/64.png" class="card-img-top  mx-auto d-block" alt="bendera">
                     <div class="card-body">
                         <h6 class="card-title"><a href="https://www.google.com/search?q='.$dataj["nama_kota"]. '+city" class="text-light" target="_blank"><b>'.$dataj['nama_kota'].'</b></a></h6>
+                        <span class="text-white">'.$dataj['tipe_wilayah'].' '.$dataj['nama_wilayah'].' ('.$dataj['kode_wilayah'].')</span><br>
                         <p class="card-text text-white">
                             <a href="https://www.google.com/maps/@'.$dataj["latKota"].','.$dataj["longKota"].',20000m/data=!3m1!1e3?entry=ttu" target="_blank" >Klik untuk melihat menggunakan Maps!</a>
                         </p>
                             <span class="text-white">Score: '.$dataj["score"].'</span>
                     </div>
                     <div class="card-footer text-body-secondary">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWilayah'.$dataj['kode_wilayah'].'">
-                            Detail Wilayah
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNegara'.$dataj['nama_negara'].'">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNegara'.$dataj['singkatan_negara'].'">
                             Detail Negara
                         </button>
                         
                         <!-- Modal Negara -->
-                        <div class="modal fade" id="modalNegara'.$dataj['nama_negara'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalNegara'.$dataj['singkatan_negara'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -75,26 +73,6 @@ class LandingController extends Controller
                                         <br>
                                         <br>
                                         Zona Waktu:<br>'.$zona_waktu.'<br>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Modal Wilayah -->
-                        <div class="modal fade" id="modalWilayah'.$dataj['kode_wilayah'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Detil Wilayah</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Nama Wilayah/Distrik: '.$dataj['nama_wilayah'].' ('.$dataj['kode_wilayah'].')<br>
-                                        Tipe Wilayah: '.$dataj['tipe_wilayah'].'<br>
-                                        Maps: <a href="https://www.google.com/maps/@'.$dataj["latWilayah"].','.$dataj["longWilayah"].',200000m/data=!3m1!1e3?entry=ttu" target="_blank" >Klik untuk melihat menggunakan Maps!</a>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
