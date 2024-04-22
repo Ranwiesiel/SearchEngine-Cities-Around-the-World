@@ -44,6 +44,7 @@ class LandingController extends Controller
                         <p class="card-text text-white">
                             <a href="https://www.google.com/maps/@'.$dataj["latKota"].','.$dataj["longKota"].',20000m/data=!3m1!1e3?entry=ttu" target="_blank" >Klik untuk melihat menggunakan Maps!</a>
                         </p>
+                            <span class="text-white">Score: '.$dataj["score"].'</span>
                     </div>
                     <div class="card-footer text-body-secondary">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWilayah'.$dataj['kode_wilayah'].'">

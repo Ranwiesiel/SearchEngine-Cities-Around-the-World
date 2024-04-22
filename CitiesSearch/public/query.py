@@ -20,7 +20,7 @@ list_doc = {}
 for q in query:
 	try :
 		for doc in indexFile[q]:
-			if doc['sub_benua'] in filter or filter[0] == "all":
+			if doc['sub_benua'] in filter or filter == "all":
 				if doc['nama_kota'] in list_doc:
 					list_doc[doc['nama_kota']]['score'] += doc['score']
 				else :
