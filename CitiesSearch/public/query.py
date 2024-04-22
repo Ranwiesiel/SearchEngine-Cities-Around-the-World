@@ -5,12 +5,12 @@ import pickle
 
 #Argumen check
 if len(sys.argv) != 5 :
-	print ("\n\nPenggunaan\n\tquery.py [index] [n] [query]..\n")
+	print ("\n\nPenggunaan\n\tquery.py [index] [n] [query] [filter]\n")
 	sys.exit(1)
 
-filter = sys.argv[4]
-query = sys.argv[3].lower().split(" ")
 n = int(sys.argv[2])
+query = sys.argv[3].lower().split(" ")
+filter = sys.argv[4]
 
 with open(sys.argv[1], 'rb') as indexdb:
 	indexFile = pickle.load(indexdb)
